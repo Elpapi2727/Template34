@@ -22,7 +22,7 @@ function setup(){
  world = engine.world;
 
  ground = new Ground(1500,700,3000,50)
- box1 = new AlienBox(1000,500,70,70)
+ box1 = new AlienBox(1000,500,150,150)
  box2 = new Box(800,570,70,70)
  box3 = new Box(800,500,70,70)
  box4 = new Box(800,430,70,70)

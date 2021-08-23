@@ -6,21 +6,19 @@ class AlienBox{
             'isStatic': true,
             'density':1.0
         }
+        this.image = loadImage("descarga.png");
         this.body = Bodies.rectangle(x, y, width, height, options);
         this.width = width;
         this.height = height;
         World.add(world, this.body);
       }
       display(){
-        var post = this.body.position
         var angle = this.body.angle;
         push();
-        translate(post.x, post.y);
+        translate(this.body.position.x, this.body.position.y);
         rotate(angle);
-        rectMode(CENTER);
-        stroke("withe");
-        fill("blue");
-        rect(0,0,this.width,this.height)
+        imageMode(CENTER);
+        image(this.image, 0, 0, this.width, this.height);
         pop();
       }
 }
