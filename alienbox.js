@@ -1,23 +1,26 @@
-class Alien{
+class AlienBox{
     constructor(x, y, width, height, angle) {
         var options = {
-            'restitution':0.8,
+            'restitution':0.08,
             'friction':1.0,
+            'isStatic': true,
             'density':1.0
         }
-        this.image = loadImage("alien1.png");
         this.body = Bodies.rectangle(x, y, width, height, options);
         this.width = width;
         this.height = height;
         World.add(world, this.body);
       }
       display(){
+        var post = this.body.position
         var angle = this.body.angle;
         push();
-        translate(this.body.position.x, this.body.position.y);
+        translate(post.x, post.y);
         rotate(angle);
-        imageMode(CENTER);
-        image(this.image, 0, 0, this.width, this.height);
+        rectMode(CENTER);
+        stroke("withe");
+        fill("blue");
+        rect(0,0,this.width,this.height)
         pop();
       }
 }

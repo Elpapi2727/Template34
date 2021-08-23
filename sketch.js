@@ -2,6 +2,7 @@ const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
+var hero;
 
 var engine, world;
 
@@ -21,7 +22,7 @@ function setup(){
  world = engine.world;
 
  ground = new Ground(1500,700,3000,50)
- box1 = new Box(800,640,70,70)
+ box1 = new AlienBox(1000,500,70,70)
  box2 = new Box(800,570,70,70)
  box3 = new Box(800,500,70,70)
  box4 = new Box(800,430,70,70)
@@ -41,8 +42,8 @@ function setup(){
  box18 = new Box(400,360,70,70)
  box19 = new Box(400,500,70,70)
  box20 = new Box(400,570,70,70)
- ball = new Ball(200,300,100,100)
- slingshot = new SlingShot(ball.body,{x:200,y:0})
+ hero = new Ball(200,200,100,100)
+ slingshot = new SlingShot(hero.body,{x:200,y:0})
  alien = new Alien(1000,400,100,100)
 }
 
@@ -70,12 +71,15 @@ function draw(){
     box18.display();
     box19.display();
     box20.display();
-    ball.display();
+    hero.display();
     slingshot.display();
     alien.display();
+
+ 
+
 }
 
 function mouseDragged(){
-Matter.Body.setPosition(ball.body,{x:mouseX,y:mouseY})
+Matter.Body.setPosition(hero.body,{x:mouseX,y:mouseY})
 
 }
